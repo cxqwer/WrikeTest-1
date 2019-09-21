@@ -1,6 +1,7 @@
 package pages;
 
 import Data.PagesData;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+@Feature("Test for 'Get started for free' button on main page")
 public class MainPage {
 
     @FindBy(xpath = "//div[@class='wg-header__sticky-mainmenu']//button")

@@ -1,3 +1,4 @@
+import io.qameta.allure.Description;
 import utils.RandomEmailGenerator;
 import Data.SocialNetsData;
 import org.junit.After;
@@ -34,6 +35,7 @@ public class WrikeTest {
         driver.close();
     }
 
+    @Description("Test on base functionality of wrike.com")
     @Test
     public void siteTest() {
         //Open url: wrike.com
