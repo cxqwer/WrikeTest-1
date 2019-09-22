@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Feature("Test for 'Get started for free' button on main page")
 public class MainPage {
-
+    // TODO: 22.09.2019 У локаторов нет комментов
     @FindBy(xpath = "//div[@class='wg-header__sticky-mainmenu']//button")
     private WebElement getStartedButton;
 
@@ -26,11 +26,13 @@ public class MainPage {
     }
 
     @Step("Open wrike.com")
+    // TODO: 22.09.2019  Нахуя делать метод который делает только одну строчку кода?)
     public void open(PagesData url) {
         driver.get(url.toString());
     }
 
     @Step("Click \"Get started for free\" button near \"Login\" button")
+    // TODO: 22.09.2019  Аналогично
     public void clickGesStartedForFree() {
         getStartedButton.click();
     }
@@ -43,6 +45,7 @@ public class MainPage {
         enterEmailField.sendKeys(email);
     }
 
+    // TODO: 22.09.2019  аналогично
     @Step("Click on \"Create my Wrike account\" button")
     public void clickCreateAccount() {
         createAccountButton.click();

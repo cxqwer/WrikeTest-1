@@ -1,5 +1,6 @@
 package utils;
 
+// TODO: 22.09.2019 Где комментарии? Што делает, как делает, нахуя делает? Тут же слоржная логика, напиши комментарии
 public class RandomEmailGenerator {
     private static final String MASK = "wpt@wriketask.qaa";
 

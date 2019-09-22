@@ -1,5 +1,6 @@
 package Data;
 
+// TODO: 22.09.2019 Я хз, но нахуя енамы которые хранят только цифры? 
 public enum FormData {
     VERY_INTERESTING(0),
     JUST_LOOKING(1),

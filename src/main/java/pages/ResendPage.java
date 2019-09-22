@@ -20,6 +20,7 @@ import static org.junit.Assert.assertTrue;
 
 @Feature("Test for 'Help us' form on resend page")
 public class ResendPage {
+    // TODO: 22.09.2019 А для локаторов коментрарии не нужны?
 
     @FindBy(xpath = "//div[@data-code='interest_in_solution']//button")
     private List<WebElement> interested;
@@ -67,6 +68,7 @@ public class ResendPage {
     @Step("Fill in the Q&A section at the left part of page in case where answers for 'Managing work' question" +
             "will be 'Yes' or 'No'")
     public void fillForm(FormData interest, FormData members, FormData managing) {
+        //TODO: 22.09.2019 Если тест завалится на одном из этих методов, будет не ясно на каком
         interested.get(interest.value).click();
         membersCount.get(members.value).click();
         managingWork.get(managing.value).click();
@@ -83,11 +85,13 @@ public class ResendPage {
      */
     @Step("Fill in the Q&A section at the left part of page in case where answer for 'Managing work' question " +
             "will be 'Other'")
+    //TODO: 22.09.2019 Если тест завалится на одном из этих методов, будет не ясно на каком
     public void fillForm(FormData interest, FormData members, FormData managing, PagesData text) {
         fillForm(interest, members, managing);
         comment.sendKeys(text.toString());
     }
 
+    // TODO: 22.09.2019 Лебедев конечно охуенный чувак, но писать лишний метод ради одного вызова кнопки, это ебонтяйство
     @Step("Submit asnwers")
     public void submit() {
         submitButton.click();
@@ -96,7 +100,7 @@ public class ResendPage {
     @Step("Check that anwers are submitted")
     public void isSubmitted() {
         WebElement element = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.visibilityOfElementLocated
+                .until(ExpectedConditions.visibilityOfElementLocated        //Локаторы надо выносить, хотябы в константу String SUCCESS_LOCATOR = "//div[@class='survey-success']"
                         (By.xpath("//div[@class='survey-success']")));
         assertTrue(element.isDisplayed());
     }
@@ -104,6 +108,8 @@ public class ResendPage {
     @Step("Check that section 'Follow us' at the site footer contains" +
             "a button that leads to the correct url and has the correct icon")
     public void checkCorrectUrlAndIcon(SocialNetsData socialNetsData) {
+        // TODO: 22.09.2019 Бля ты же читал книги, что за f?
+        // TODO: 22.09.2019 boolean urlAndIconIsCorrect = false;
         boolean f = false;
         for (int i = 0; i < socialNetworkUrls.size(); i++) {
             if ((socialNetworkUrls.get(i).getAttribute("href").equals(socialNetsData.url)
